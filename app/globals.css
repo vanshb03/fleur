@@ -1,26 +1,62 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-bg: #111110;
+  --color-bg-2: #171715;
+  --color-bg-3: #1e1e1c;
+  --color-bg-4: #252523;
+
+  --color-text: #e8e4dc;
+  --color-text-2: #9a9690;
+  --color-text-3: #5a5752;
+
+  --color-accent: #7c9e6b;
+  --color-accent-2: #a8c995;
+  --color-accent-dim: rgba(124, 158, 107, 0.15);
+
+  --color-warn: #c4874a;
+  --color-warn-dim: rgba(196, 135, 74, 0.14);
+
+  --color-purple: #8b7ec8;
+  --color-purple-dim: rgba(139, 126, 200, 0.13);
+
+  --color-blue: #6a9fc0;
+  --color-blue-dim: rgba(106, 159, 192, 0.13);
+
+  --color-line: rgba(255, 255, 255, 0.08);
+  --color-line-2: rgba(255, 255, 255, 0.14);
+  --color-line-3: rgba(255, 255, 255, 0.22);
+
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-dm-mono), ui-monospace, SFMono-Regular, monospace;
+  --font-serif: var(--font-playfair), ui-serif, Georgia, serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html,
+body {
+  height: 100%;
+  overflow: hidden;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-weight: 300;
+  display: flex;
+  flex-direction: column;
+}
+
+*::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--color-line-2);
+  border-radius: 2px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
 }
